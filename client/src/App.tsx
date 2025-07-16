@@ -4,6 +4,7 @@ import { Login } from './components/Login';
 import { Register } from './components/Register';
 import { Dashboard } from './components/Dashboard';
 import { PrivateRoute } from './components/PrivateRoute';
+import { AuthCallback } from './components/AuthCallback';
 import './App.css';
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
         <div className="app">
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/register" element={<Navigate to="/login" />} />
+            <Route path="/auth/callback" element={<AuthCallback />} />
             <Route
               path="/dashboard"
               element={
