@@ -53,65 +53,75 @@ export const Dashboard: React.FC = () => {
     }
   };
 
-  if (loading) return (
-    <div className="loading-container">
-      <div className="loading"></div>
-      <p className="loading-text">Loading your daily reflection...</p>
-    </div>
-  );
+  if (loading)
+    return (
+      <div className='loading-container'>
+        <div className='loading'></div>
+        <p className='loading-text'>Loading your daily reflection...</p>
+      </div>
+    );
 
   return (
-    <div className="dashboard">
+    <div className='dashboard'>
       <header>
-        <div className="header-content">
+        <div className='header-content'>
           <h1>Basket</h1>
-          <button onClick={logout} className="secondary">Sign Out</button>
+          <button onClick={logout} className='secondary'>
+            Sign Out
+          </button>
         </div>
       </header>
 
-      <div className="content">
-        {error && <div className="error">{error}</div>}
-        
+      <div className='content'>
+        {error && <div className='error'>{error}</div>}
+
         {question && (
-          <div className="question-card fade-in">
+          <div className='question-card fade-in'>
             <h2>Today's Reflection</h2>
-            <p className="question-text">{question.question_text}</p>
-            <span className="category">{question.category}</span>
+            <p className='question-text'>{question.question_text}</p>
+            <span className='category'>{question.category}</span>
           </div>
         )}
 
         {!hasResponded && question ? (
-          <form onSubmit={handleSubmit} className="response-form fade-in">
+          <form onSubmit={handleSubmit} className='response-form fade-in'>
             <h3>Your Response</h3>
             <textarea
               value={responseText}
               onChange={(e) => setResponseText(e.target.value)}
-              placeholder="Take a moment to reflect and share your thoughts..."
+              placeholder='Take a moment to reflect and share your thoughts...'
               required
               rows={4}
             />
-            <button type="submit" className="primary">Share Your Response</button>
+            <button type='submit' className='primary'>
+              Share Your Response
+            </button>
           </form>
-        ) : hasResponded && (
-          <div className="already-responded fade-in">
-            <div className="check-icon">✓</div>
-            <p>You've already shared your reflection today!</p>
-            <p>Come back tomorrow for a new question.</p>
-          </div>
+        ) : (
+          hasResponded && (
+            <div className='already-responded fade-in'>
+              <div className='check-icon'>✓</div>
+              <p>You've already shared your reflection today!</p>
+              <p>Come back tomorrow for a new question.</p>
+            </div>
+          )
         )}
 
         {matchedResponse && (
-          <div className="matched-response">
+          <div className='matched-response'>
             <h3>💫 A Shared Perspective</h3>
             <p>{matchedResponse.response_text}</p>
-            <small>Shared {new Date(matchedResponse.created_at).toLocaleDateString('en-US', { 
-              weekday: 'long',
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-              hour: '2-digit',
-              minute: '2-digit'
-            })}</small>
+            <small>
+              Shared{' '}
+              {new Date(matchedResponse.created_at).toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+              })}
+            </small>
           </div>
         )}
       </div>

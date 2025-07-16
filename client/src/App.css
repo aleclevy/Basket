@@ -32,7 +32,7 @@
   .auth-wrapper {
     padding: var(--space-md);
   }
-  
+
   .auth-container {
     padding: var(--space-xl);
     border-radius: var(--radius-lg);
@@ -407,7 +407,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -545,7 +546,7 @@
     color: #e8eaed !important;
     border-color: #5f6368 !important;
   }
-  
+
   .google-signin-btn:hover {
     background-color: #202124 !important;
   }

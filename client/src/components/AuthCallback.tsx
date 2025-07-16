@@ -9,7 +9,7 @@ export const AuthCallback: React.FC = () => {
 
   useEffect(() => {
     const token = searchParams.get('token');
-    
+
     if (token) {
       // Store token and redirect to dashboard
       localStorage.setItem('token', token);
@@ -22,9 +22,9 @@ export const AuthCallback: React.FC = () => {
   }, [navigate, searchParams, setAuthToken]);
 
   return (
-    <div className="loading-container">
-      <div className="loading"></div>
-      <p className="loading-text">Completing sign in...</p>
+    <div className='loading-container'>
+      <div className='loading'></div>
+      <p className='loading-text'>Completing sign in...</p>
     </div>
   );
 };

@@ -19,7 +19,7 @@ export const authAPI = {
     const response = await api.post('/auth/register', { username, email, password });
     return response.data;
   },
-  
+
   login: async (email: string, password: string) => {
     const response = await api.post('/auth/login', { email, password });
     return response.data;
@@ -31,12 +31,12 @@ export const questionsAPI = {
     const response = await api.get('/questions/today');
     return response.data;
   },
-  
+
   submitResponse: async (questionId: number, responseText: string) => {
     const response = await api.post('/questions/respond', { questionId, responseText });
     return response.data;
   },
-  
+
   getMyResponses: async () => {
     const response = await api.get('/questions/my-responses');
     return response.data;
