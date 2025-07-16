@@ -22,7 +22,7 @@ export const Dashboard: React.FC = () => {
   const [matchedResponse, setMatchedResponse] = useState<MatchedResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const { user, logout } = useAuth();
+  const { logout } = useAuth();
 
   useEffect(() => {
     fetchTodaysQuestion();
