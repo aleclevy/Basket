@@ -4,11 +4,11 @@ A BeReal-style mental health app where users receive daily notifications to answ
 
 ## Features
 
-- 🔐 User authentication (JWT)
-- 📅 Daily mental health questions
-- 💬 Anonymous response sharing
-- 🔔 Scheduled notifications (cron job)
-- 🎨 Dark theme UI
+-  User authentication (JWT)
+-  Daily mental health questions
+-  Anonymous response sharing
+-  Scheduled notifications (cron job)
+-  Dark theme UI
 
 ## Tech Stack
 
